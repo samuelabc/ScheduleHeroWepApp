@@ -38,7 +38,7 @@ const UserAccountPage = (props) => {
     const handleLogout = async () => {
         await setUsername('')
         await setUserType('')
-        // await setSchedules([])
+        await setSchedules([])
         console.log('handle logout')
         history.push('/login')
     }

@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const usersRouter = require('./controllers/users')
 const schedulesRouter = require('./controllers/schedules')
 const mongoose = require('mongoose')
@@ -13,6 +14,8 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFind
         console.log('error connection to MongoDB: ', error.message)
     })
 
+app.use(express.static('build'))
+app.use(cors())
 app.use(express.json())
 app.use('/users', usersRouter)
 app.use('/schedules', schedulesRouter)

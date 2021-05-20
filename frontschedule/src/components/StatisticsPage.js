@@ -309,10 +309,10 @@ const StatisticsPage = (props) => {
     const statistics = {
         'All': schedules,
         'All completed': schedules.filter(schedule => {
-            return (schedule.completed === "false" ? true : false)
+            return (schedule.completed === "true" ? true : false)
         }),
         'All ongoing': schedules.filter(schedule => {
-            return (schedule.completed === "false" ? false : true)
+            return (schedule.completed === "false" ? true : false)
         }),
         'Past': schedules.filter(schedule => {
             if (isBefore(new Date(schedule.date), startOfToday())) {

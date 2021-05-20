@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link,
@@ -77,7 +77,6 @@ const App = () => {
     async function saveToLocalstorage() {
       console.log('saveToLocalstorage')
       if (username === '') {
-        // setSchedules([])
         window.localStorage.clear()
         console.log('local storage cleared')
       }

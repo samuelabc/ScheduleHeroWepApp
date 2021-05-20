@@ -28,16 +28,17 @@ const AlertPopUp = React.forwardRef((props, ref) => {
             onClose={handleCancel}
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
+            maxWidth="lg"
         >
-            <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
+            <DialogTitle id="alert-dialog-title"><h2>{title}</h2></DialogTitle>
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                    {description}
+                    <h4>{description}</h4>
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
                 <Button onClick={handleCancel} color="secondary">
-                    Okay
+                    <h4>Okay</h4>
                 </Button>
             </DialogActions>
         </Dialog>

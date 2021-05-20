@@ -42,19 +42,19 @@ const ConfirmPopUp = React.forwardRef((props, ref) => {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
         >
-            <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
+            <DialogTitle id="alert-dialog-title"><h2>{title}</h2></DialogTitle>
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                    {description}
+                    <h4>{description}</h4>
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
                 <Button onClick={handleCancel} color="secondary">
-                    Cancel
-                    </Button>
+                    <h4>Cancel</h4>
+                </Button>
                 <Button onClick={handleConfirm} color="primary" autoFocus>
-                    Confirm
-                    </Button>
+                    <h4>Confirm</h4>
+                </Button>
             </DialogActions>
         </Dialog>
     );
