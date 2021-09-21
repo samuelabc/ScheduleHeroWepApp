@@ -22,7 +22,12 @@ const SchedulePage = (props) => {
 
     const initialShowAllContent = () => window.localStorage.getItem('showAllContent') === "true" || false
     const initialShowCompletedSchedule = () => window.localStorage.getItem('showCompletedSchedule') === "true" || false
-    const initialTimeTimeRange = () => parseInt(window.localStorage.getItem('timeRange')) || 4
+    const initialTimeTimeRange = () => {
+        if (window.localStorage.getItem('timeRange')) {
+            return parseInt(window.localStorage.getItem('timeRange'))
+        }
+        return 4
+    }
     const [search, setSearch] = useState('')
     const [timeRange, setTimeRange] = useState(initialTimeTimeRange)
     const [schedulesToShow, setSchedulesToShow] = useState(schedules)
@@ -93,10 +98,7 @@ const SchedulePage = (props) => {
         else {
             var newSchedulesToShow = await schedulestimeRange.filter(schedule => {
                 if (schedule.title.toLowerCase().includes(newSearch.toLowerCase()) ||
-                    schedule.content.toLowerCase().includes(newSearch.toLowerCase()) ||
-                    schedule.date.toLowerCase().includes(newSearch.toLowerCase()) ||
-                    schedule.start_time.toLowerCase().includes(newSearch.toLowerCase()) ||
-                    (schedule.end_time && schedule.end_time.toLowerCase().includes(newSearch.toLowerCase()))) {
+                    schedule.content.toLowerCase().includes(newSearch.toLowerCase())) {
                     return true
                 }
                 else {

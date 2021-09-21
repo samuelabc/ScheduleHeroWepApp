@@ -135,7 +135,7 @@ function Row(props) {
                         setSchedules: setSchedules,
                     })}>
                         {row.completed === "true"
-                            ? <CheckCircleOutlineIcon style={{ color: "green" }} fontSize="large" />
+                            ? <CheckCircleIcon style={{ color: "green" }} fontSize="large" />
                             : <CheckCircleOutlineIcon style={{ color: "grey" }} fontSize="large" />
                         }
                     </IconButton>

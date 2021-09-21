@@ -84,8 +84,8 @@ const AdminUserManagementPage = (props) => {
             var newUsersToShow = await users.filter(user => {
                 console.log('user', user)
                 if (user.username.toLowerCase().includes(newSearchLow) ||
-                    user.user_type.toLowerCase().includes(newSearchLow) ||
-                    (user.register_date && user.register_date.toLowerCase().includes(newSearchLow))) {
+                    user.user_type.toLowerCase().includes(newSearchLow)
+                ) {
                     return true
                 }
                 else {

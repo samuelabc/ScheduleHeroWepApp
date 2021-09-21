@@ -19,6 +19,7 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import scheduleService from '../services/schedules'
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline'
+import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 
 const handleClickEditButton = (props) => {
     window.localStorage.setItem('lastpage', 'statistics');
@@ -123,7 +124,7 @@ function Row(props) {
                         setSchedules: setSchedules,
                     })}>
                         {row.completed === "true"
-                            ? <CheckCircleOutlineIcon style={{ color: "green" }} fontSize="large" />
+                            ? <CheckCircleIcon style={{ color: "green" }} fontSize="large" />
                             : <CheckCircleOutlineIcon style={{ color: "grey" }} fontSize="large" />
                         }
                     </IconButton>
